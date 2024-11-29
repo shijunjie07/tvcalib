@@ -10,7 +10,7 @@ import kornia
 from PIL import Image
 from torch.utils.data import Dataset
 import torchvision
-from torch._six import string_classes
+from torch import string_classes
 import collections
 from operator import itemgetter
 
