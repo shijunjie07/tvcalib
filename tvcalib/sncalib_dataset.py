@@ -401,6 +401,10 @@ def custom_list_collate(batch):
             # shared memory tensor to avoid an extra copy
             numel = sum(x.numel() for x in batch)
             storage = elem.untyped_storage()._new_shared(numel)
+            print(numel)
+            print(storage)
+            print(len(batch))
+            print(len(elem.size()))
             out = elem.new(storage).resize_(len(batch), *list(elem.size()))
         return torch.stack(batch, 0, out=out)
     elif (
